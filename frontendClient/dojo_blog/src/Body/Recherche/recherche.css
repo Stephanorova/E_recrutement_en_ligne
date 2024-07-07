@@ -1,0 +1,14 @@
+.serche{
+    width: 50vw;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 15px;
+    background-color:#fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 7px 7px 1px rgba(1, 0, 0, 1);
+}
+.serche:focus{
+    outline: none;
+}

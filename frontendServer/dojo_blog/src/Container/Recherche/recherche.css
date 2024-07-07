@@ -1,0 +1,25 @@
+.searche{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    background-color: #0224;
+    height: 40px;
+    border-radius: 10px;
+    gap: 2px;
+}
+
+.serche{
+    width: 270px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 15px;
+    background-color:#fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.serche:focus{
+    outline: none;
+}

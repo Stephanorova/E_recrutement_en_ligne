@@ -1,0 +1,47 @@
+.Information{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.Info{
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+.cage{
+    width: 800px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    margin-left: 2rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 1);
+    background-color: aliceblue;
+
+    .inf{
+        font-size: 14px;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .close{
+        cursor: pointer;
+        color: tomato;
+        font-weight: bold;
+    }
+}
+
+
+
+
+
+
+
+

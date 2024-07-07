@@ -1,0 +1,21 @@
+.projetliste{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+}
+
+.projecte{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.projets{
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  gap: 2rem;
+}

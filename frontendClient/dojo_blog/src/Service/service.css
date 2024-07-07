@@ -1,0 +1,67 @@
+.serv{
+  padding: 30px;
+  width: 100%;
+  background-color: #f0f0f0;
+  height: auto;
+}
+.calandar{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.operateur{
+  display: flex;
+  align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.cadre1{
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 100px;
+  background-color: green;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.cadre2{
+  width: 220px;
+  height: 100px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.cadre3{
+  width: 220px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: blue;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.cadre4{
+  width: 220px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(238, 130, 53) ;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
