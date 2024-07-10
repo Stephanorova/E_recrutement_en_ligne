@@ -27,20 +27,14 @@ const handleAjoutAll = (e)=>{
 
   return (
     <div className='ajoutOffre'>
-     <form onSubmit={handleAjoutAll}>
-        <input type="text" placeholder='titre offre' onChange={(e)=>setAjout({...ajout, name: e.target.value})}/>
-        <input type="text" placeholder='genre' onChange={(e)=>setAjout({...ajout, Genre: e.target.value})}/>
-        <input type="text" placeholder='mission' onChange={(e)=>setAjout({...ajout, Mission: e.target.value})}/>
-        <textarea type="text" placeholder='profil' onChange={(e)=>setAjout({...ajout, Profil: e.target.value})}/>
-         <button style={{color:"gray",
-        border:"1px solid blue", 
-        width:"200px",
-        height:"50px",
-        position:"relative", 
-        cursor:"pointer", 
-        left:"10rem", 
-        fontWeight:"bold"}}
-        >Ajouter</button>
+     <form onSubmit={handleAjoutAll} novalidate>
+        <input type="text" placeholder='titre offre' onChange={(e)=>setAjout({...ajout, name: e.target.value})} className="form-control" id="validationCustom01"  required/>
+        <input type="text" placeholder='genre' onChange={(e)=>setAjout({...ajout, Genre: e.target.value})} className="form-control" id="validationCustom02"  required/>
+        <input type="text" placeholder='mission' onChange={(e)=>setAjout({...ajout, Mission: e.target.value})} className="form-control" id="validationCustom03" required/>
+        <textarea type="text" placeholder='profil' onChange={(e)=>setAjout({...ajout, Profil: e.target.value})} className="form-control" id="validationCustom04" required/>
+     <div class="col-12">
+          <button class="btn btn-primary" type="submit">Ajouter</button>
+     </div>
     </form>
     </div>
   )

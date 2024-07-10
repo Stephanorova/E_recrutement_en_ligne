@@ -25,21 +25,15 @@ const Ajouter = () => {
   
   return (
     <div className='ajoutOffre'>
-    <form  onSubmit={handleAjout}>
-       <input type="number" placeholder='Matricule' onChange={(e)=>setAjouter({...ajouter, Matricule: e.target.value})}/>
-       <input type="text" placeholder='Photo'onChange={(e)=>setAjouter({...ajouter, Photo: e.target.value})}/>
-       <input type="text" placeholder='Nom' onChange={(e)=>setAjouter({...ajouter, Nom: e.target.value})}/>
-       <input type="text" placeholder='Prenom'onChange={(e)=>setAjouter({...ajouter, Prenom: e.target.value})}/>
-       <input type="text" placeholder='Activite'onChange={(e)=>setAjouter({...ajouter, Activite: e.target.value})}/>
-        <button style={{color:"gray",
-       border:"1px solid blue", 
-       width:"200px",
-       height:"50px",
-       position:"relative", 
-       cursor:"pointer", 
-       left:"10rem", 
-       fontWeight:"bold"}}
-       >Ajouter</button>
+   <form  onSubmit={handleAjout} className="row g-3 needs-validation" novalidate>
+       <input type="number" placeholder='Matricule' onChange={(e)=>setAjouter({...ajouter, Matricule: e.target.value})} className="form-control" id="validationCustom01"  required/>
+       <input type="text" placeholder='Photo'onChange={(e)=>setAjouter({...ajouter, Photo: e.target.value})} className="form-control" id="validationCustom02"  required/>
+       <input type="text" placeholder='Nom' onChange={(e)=>setAjouter({...ajouter, Nom: e.target.value})} className="form-control" id="validationCustom03" required/>
+       <input type="text" placeholder='Prenom'onChange={(e)=>setAjouter({...ajouter, Prenom: e.target.value})} className="form-control" id="validationCustom04" required/>
+       <input type="text" placeholder='Activite'onChange={(e)=>setAjouter({...ajouter, Activite: e.target.value})} className="form-control" id="validationCustom05" required/>
+       <div class="col-12">
+       <button class="btn btn-primary" type="submit">Ajouter</button>
+  </div>
    </form>
    </div>
   )
