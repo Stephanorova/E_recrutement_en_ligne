@@ -6,10 +6,11 @@ import CloseIcons from "@mui/icons-material/Close"
 
 
 
-const base_url = "http://localhost:5000/api/candidat"
+const base_url = "http://localhost:5000/api/candidat/"
 
 const Information = () => {
 const[informe,setInfo]= useState()
+const[info,setInformation]= useState()
 
 
 useEffect(()=>{
@@ -26,6 +27,20 @@ useEffect(()=>{
   getAllOfre()
 }, [])
 
+useEffect(()=>{
+  const getAll= async()=>{
+     try {
+         const url = `${base_url}/count`
+         const {data} = await axios.get(url)
+         setInformation(data)
+         console.log(data);
+     } catch (error) {
+         console.log(error);
+     }
+  }
+  getAll()
+}, [])
+
 
 const handleSuppression = (_id)=>{
         axios.delete("http://localhost:5000/api/candidat/"+_id)
@@ -36,12 +51,10 @@ const handleSuppression = (_id)=>{
 }
 
 
-
-
   return (
     <div className='Information'>
       <div style={{fontWeight:"bold", fontSize:"20px"}}>
-        Information dee personne qui déjà inscrit dans ce site
+        Information de personne qui déjà inscrit dans ce site
       </div>
       <div className='Info'>
     {

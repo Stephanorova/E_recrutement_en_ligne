@@ -9,6 +9,7 @@ const Login = require("./Route/LoginRoute")
 const Admine = require("./Route/AdmineRoute")
 const AdminLogin = require("./Route/AdmineLogin")
 const Fichier = require("./Route/Fichier")
+const teame = require("./Route/TeameRouter")
 
 require("dotenv").config()
 
@@ -27,6 +28,7 @@ app.use("/api/login", Login)
 app.use("/api/admine", Admine)
 app.use("/api/logine", AdminLogin)
 app.use("/api/send-email", Fichier)
+app.use("/api/teame", teame)
 
 //creation de serveure
 const Port = process.env.PORT || 5000 

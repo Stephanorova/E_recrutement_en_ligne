@@ -10,6 +10,9 @@ import { ProjetPage } from "./Page/ProjetPage/ProjetPage"
 import { LinePage } from "./Page/LineChartPage/LinePage"
 import { ChartBare } from "./Page/BareChartPage/ChartBare"
 import { TeamePage } from "./Page/TeamePage/TeamePage"
+import { PageView } from "./Page/ViewPage/PageView"
+import { PageAjouts } from "./Page/AjouPage/PAgeAjout"
+import { PageModifie } from "./Page/ModifiePage/PageModifie"
 
 
 
@@ -29,6 +32,9 @@ export default function App() {
         <Route path="/linechart" component={()=><LinePage/>} />
         <Route path="/barechart" component={()=><ChartBare/>} />
         <Route path="/teame" component={()=><TeamePage/>} />
+        <Route path="/view/:_id" component={()=><PageView/>} />
+        <Route path="/ajout" component={()=><PageAjouts/>} />
+        <Route path="/update/:_id" component={()=><PageModifie/>} />
       </Switch>
       </BrowserRouter>
     </div>

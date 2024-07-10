@@ -10,7 +10,6 @@ import "react-toastify/dist/ReactToastify.css"
 import NaveBarContact from "./NaveBare/Contenaire/NaveBarContact"
 import NaveService from "./NaveBare/Contenaire/NaveService"
 import NaveApropos from "./NaveBare/Contenaire/NaveApropos"
-import NaveProjet from "./NaveBare/Contenaire/NaveProjet"
 
 
 
@@ -28,7 +27,6 @@ export default function App() {
       <Route path="/contact" component={()=> <NaveBarContact/>}/>
       <Route path="/service" component={()=> <NaveService/>}/>
       <Route path="/apropos" component={()=> <NaveApropos/>}/>
-      <Route path="/projet" component={()=> <NaveProjet/>}/>
       </Switch>
       </BrowserRouter>
       <Footer/>

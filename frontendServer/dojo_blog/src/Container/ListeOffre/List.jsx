@@ -4,6 +4,7 @@ import { Recherche } from '../Recherche/Recherche'
 import './list.css'
 import {useEffect, useState} from "react"
 import axios from "axios"
+import {useHistory} from "react-router-dom"
 
 const base_url = "http://localhost:5000/api/offre"
 
@@ -13,6 +14,7 @@ export const List = () => {
   const[page,setPage] = useState(1)
   const[search,setSearch]=useState("")
 
+  const history = useHistory()
 
   useEffect(()=>{
     const getAllOfre = async()=>{
@@ -35,8 +37,8 @@ export const List = () => {
         <div className="cherche">
         <Recherche search={search}
         setSearch={(search)=>setSearch(search)}/>
-      <div className="ajouetr">
-        <label>Ajouter</label>
+      <div className="ajouetr" onClick={()=>history.push("/ajouter")}>
+        <label style={{cursor:"pointer"}}>Ajouter</label>
       </div>
         </div>
         <div className="center">

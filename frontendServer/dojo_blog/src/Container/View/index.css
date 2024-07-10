@@ -1,0 +1,22 @@
+.view{
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadre{
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 1px 7px 7px 1px rgba(0, 0, 0, 0.2);
+    margin-top: 10rem;
+    margin-left: 10rem;
+    border: 1px solid gray;
+    font-weight: bold;
+    font-size: 20px;
+}

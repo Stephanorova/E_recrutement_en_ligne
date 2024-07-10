@@ -24,9 +24,6 @@ function NavBotom() {
           <li onClick={()=>history.push("/")}>
               Offres
             </li>
-            <li onClick={()=>history.push("/projet")}>
-              Projet
-            </li>
             <li onClick={()=>history.push("/service")}>
               Service
             </li>

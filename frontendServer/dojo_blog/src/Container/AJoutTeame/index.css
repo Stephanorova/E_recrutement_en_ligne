@@ -1,0 +1,48 @@
+.ajouter{
+    padding: 30px;
+}.ajoutOffre{
+    display: flex;
+    width: 75vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120vh;
+    animation: fadeInUp 1s 1s;
+    animation-fill-mode:  backwards;
+    
+   
+}
+.ajoutOffre form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input{
+        width: 500px;
+        height: 50px;
+        padding-left: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        color: white;
+        background-color: #022050;
+    }
+    textarea{
+        width: 500px;
+        height: 200px;
+        padding-left: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        color: white;
+        background-color: #022050;
+    }
+    textarea:focus{
+        outline: none;
+    }
+
+
+    input:focus{
+        outline: none;
+    }
+}

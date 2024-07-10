@@ -1,7 +1,7 @@
 import "./naveBare.css"
-import InfoIcons from "@mui/icons-material/Info"
-import AddIcons from "@mui/icons-material/Add"
-import ListIcons from "@mui/icons-material/List"
+// import InfoIcons from "@mui/icons-material/Info"
+// import AddIcons from "@mui/icons-material/Add"
+// import ListIcons from "@mui/icons-material/List"
 import EmailIcons from "@mui/icons-material/Email"
 import GithubIcons from "@mui/icons-material/GitHub"
 import LinkedInIcons from "@mui/icons-material/LinkedIn"
@@ -9,14 +9,12 @@ import FacebookIcons from "@mui/icons-material/Facebook"
 import {useHistory}  from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { Abandoner } from "../Componente/AuthRedux/AuthRedux"
-import axios from "axios"
-import {useEffect,useState} from "react"
 import { Sidebar, Menu, MenuItem, SubMenu} from "react-pro-sidebar"
 
 
 
 const NaveBar = () => {
-const[count,setCount]=useState(0)
+
 const history = useHistory()
 const dispatch = useDispatch()
 const auth = useSelector(stat =>stat.auth)
@@ -28,24 +26,14 @@ const deconnexion = ()=>{
   }
 }
 
-useEffect(()=>{
-  const repons =  axios.get("http://localhost:5000/api/candidat/count")
-  .then(()=>{
-   setCount(repons.data);
-  })
-  
-},[])
-
-
-
 
   return (
   <Sidebar className="sidebar">
       <div className="rigth">
-                 <h1>L</h1>
-                 <h3 style={{color:"tomato"}}>k</h3>
-                 <h1>M</h1>
-                 <h3 style={{color:"tomato"}}>c</h3>
+                 <h1>ST</h1>
+                 <h3 style={{color:"tomato"}}>EP</h3>
+                 <h1>HA</h1>
+                 <h3 style={{color:"tomato"}}>NO</h3>
         </div>
     <Menu className="menu">
     <h4 style={{display:"flex",alignItems:"center",justifyContent:"center", fontWeight:"bold"}}>Admine Page</h4>
@@ -57,15 +45,15 @@ useEffect(()=>{
       <MenuItem  onClick={()=>history.push("/list")}>  Listes des offres</MenuItem>
       <MenuItem onClick={()=>history.push("/ajouter")}> Ajouter Offre</MenuItem>
     </SubMenu>
-    <SubMenu label="Info" >
-      <MenuItem onClick={()=>history.push("/infonce")}> Information d'inscription</MenuItem>
+    <SubMenu label="Info">
+      <MenuItem onClick={()=>history.push("/infonce")}> Information d'inscription </MenuItem>
     </SubMenu>
     <SubMenu label="Projet" >
       <MenuItem  onClick={()=>history.push("/listeProjet")}> Listes des projet</MenuItem>
     </SubMenu>
     <SubMenu label="Teame" >
       <MenuItem  onClick={()=>history.push("/teame")}> Listes des teame</MenuItem>
-      <MenuItem  onClick={()=>history.push("/teame")}> Ajouter teame</MenuItem>
+      <MenuItem  onClick={()=>history.push("/ajout")}> Ajouter teame</MenuItem>
     </SubMenu>
     <MenuItem onClick={()=>deconnexion()}> Déconnexion</MenuItem>
   </Menu>
