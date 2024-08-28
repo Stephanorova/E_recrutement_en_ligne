@@ -22,7 +22,7 @@ export default function App() {
       <NaveTop/>
       <Switch>
       <Route path="/" exact component={()=> <NaveBareBody/>}/>
-      <Route path="/login" component={()=> <NaveBareLogin/>}/>
+      <Route path="/login/:_id" component={()=> <NaveBareLogin/>}/>
       <Route path="/cv" component={()=> <NaveFichier/>}/>
       <Route path="/contact" component={()=> <NaveBarContact/>}/>
       <Route path="/service" component={()=> <NaveService/>}/>

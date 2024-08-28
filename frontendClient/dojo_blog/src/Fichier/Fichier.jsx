@@ -9,8 +9,8 @@ import AccessAlarmsIcons from "@mui/icons-material/AccessAlarms"
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Abandoner } from '../ReduxSlice/authSlice'
-import axios from 'axios'
 import {toast}  from 'react-toastify'
+import axios from 'axios'
 
 
 
@@ -20,40 +20,43 @@ function Fichier() {
   const [emailData, setEmailData] = useState({
     to: '',
     subject: '',
-    text: ''
+    text: '',
+    file: null
   });
-  const [file, setFile] = useState(null);
 
-  const handleInputChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setEmailData({
       ...emailData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    setEmailData({
+      ...emailData,
+      file: e.target.files[0],
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     const formData = new FormData();
-    formData.append('pdf', file);
     formData.append('to', emailData.to);
     formData.append('subject', emailData.subject);
     formData.append('text', emailData.text);
-
+    formData.append('file', emailData.file);
     try {
       const response = await axios.post('http://localhost:5000/api/send-email', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
-      alert('Email sent successfully: ' + response.data);
+
+      console.log('Email sent:', response.data);
     } catch (error) {
       console.error('Error sending email:', error);
-      alert('Error sending email');
     }
   };
 
@@ -68,7 +71,7 @@ function Fichier() {
  const deconnexion = ()=>{
      if (auth._id) {
        dispach(Abandoner(null))
-       history.push("/login")
+       history.push("/login/_id")
        toast.warning("vous-etes abandonner",{
         position:"bottom-left"
        })
@@ -96,11 +99,11 @@ function Fichier() {
          <form onSubmit={handleSubmit} className='forme'>
           <div className="classput">
           <label>Email :</label>
-          <input type="email" name="to" value={emailData.to} onChange={handleInputChange } required />
+          <input type="email" name="to" value={emailData.to} onChange={handleChange} required />
           <label>Objet:</label>
-          <input type="text" name="subject" value={emailData.subject} onChange={handleInputChange} required />
+          <input type="text" name="subject" value={emailData.subject} onChange={handleChange} required />
           <label>Message:</label>
-          <textarea name="text" value={emailData.text} onChange={handleInputChange} required></textarea>
+          <textarea name="text" value={emailData.text} onChange={handleChange} required></textarea>
     
         </div>
         <div>

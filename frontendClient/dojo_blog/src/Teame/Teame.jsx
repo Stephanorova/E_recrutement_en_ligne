@@ -1,12 +1,27 @@
 import './apropos.css'
+import axios from 'axios';
+import { useEffect, useState } from 'react'
 
 
+
+const base_url = "http://localhost:5000/api/teame/";
 
 const Teame = () => {
-  
+  const[teame,setTeame]= useState()
 
-
-
+ useEffect(()=>{
+   const getTeame= async()=>{
+      try {
+          const url = `${base_url}`
+          const {data} = await axios.get(url)
+          setTeame(data)
+          console.log(data);
+      } catch (error) {
+          console.log(error);
+      }
+   }
+   getTeame()
+ }, [])
 
 
   return (
@@ -31,7 +46,7 @@ const Teame = () => {
           </div>
         </div>
 
-  <table class="table" style={{marginTop:"50px", marginLeft:"20px"}}>
+  <table class="table" style={{marginTop:"50px", marginLeft:"25px"}}>
   <caption>List des employés</caption>
   <thead>
     <tr>
@@ -43,45 +58,22 @@ const Teame = () => {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Mark</td>
-      <td><img src="/image/sise.PNG" className='images'/></td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-      <td><img src="/image/sise.PNG" className='images'/></td>
-      <td>@fat</td>
-      <td>@fat</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>Larry</td>
-      <td><img src="/image/sise.PNG" className='images'/></td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <td>Larry</td>
-      <td><img src="/image/sise.PNG" className='images'/></td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <td>Larry</td>
-      <td><img src="/image/sise.PNG" className='images'/></td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-    </tr>
+  {
+      teame?.map((team)=>
+        (
+        <tr key={team._id}>
+        <td>{team.Matricule}</td>
+        <td><img src="/image/sise.PNG" className='images'/></td>
+        <td>{team.Nom}</td>
+        <td>{team.Prenom}</td>
+        <td>{team.Activite}</td>
+      </tr>
+      ))
+    }
   </tbody>
-</table>
-       </div>     
-      </div>
+ </table> 
+</div>     
+</div>
   )
 }
 

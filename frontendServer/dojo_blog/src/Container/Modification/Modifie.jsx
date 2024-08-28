@@ -34,7 +34,7 @@ const Update = () => {
    const handleUpdate = (e)=>{
        e.preventDefault()
        axios.put("http://localhost:5000/api/teame/"+_id, ajouter)
-       .then(res =>console.console.log(res.data))
+         .then(res =>console.console.log(res.data))
          .catch(erreur => console.log(erreur))
        history.push("/teame")
    }
@@ -47,7 +47,7 @@ const Update = () => {
        <input type="text" placeholder='Nom' value={ajouter.Nom} onChange={(e)=>setAjouter({...ajouter, Nom: e.target.value})}/>
        <input type="text" placeholder='Prenom' value={ajouter.Prenom}  onChange={(e)=>setAjouter({...ajouter, Prenom: e.target.value})}/>
        <input type="text" placeholder='Activite'  value={ajouter.Activite}   onChange={(e)=>setAjouter({...ajouter, Activite: e.target.value})}/>
-        <button style={{color:"gray",
+       <button style={{color:"gray",
        border:"1px solid blue", 
        width:"200px",
        height:"50px",

@@ -14,6 +14,7 @@ import  {toast} from "react-toastify"
 
 
 
+
 function Login() {
 const dispatch = useDispatch()
 const history = useHistory()
@@ -26,8 +27,6 @@ const [register,setResister] = useState({
   Email:"",
   Password:"",
 })
-
-
 
 useEffect(()=>{
   if (auth._id) {

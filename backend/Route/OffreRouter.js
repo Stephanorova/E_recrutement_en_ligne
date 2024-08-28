@@ -89,5 +89,14 @@ router.delete("/supp/:_id", async(req,res)=>{
 
 })
 
+router.get("/:_id", async(req,res)=>{
+   const AfficheID = await Offres.findById(req.params._id)
+    if (AfficheID) {
+      return res.status(200).json("success")
+    } else {
+      return res.status(404).json("filed")
+    }
+})
+
 
 module.exports = router;

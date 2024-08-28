@@ -7,9 +7,7 @@ const AffichageOffre = ({offres}) => {
 
      const history = useHistory()
 
-      const handlePostule = ()=>{
-        history.push("/login") 
-      }
+     
     
   return (
     <div className='offres'>
@@ -42,7 +40,7 @@ const AffichageOffre = ({offres}) => {
 
                     </div>
                      <div className="postule">
-                        <button className='detaille' onClick={()=>handlePostule()}>Postulé</button>
+                        <button className='detaille' onClick={()=>history.push(`/login/${Offres._id}`)}>Postulé</button>
                      </div> 
                     </div>              
                 )
