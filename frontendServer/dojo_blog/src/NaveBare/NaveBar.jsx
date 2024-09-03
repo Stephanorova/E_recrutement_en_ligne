@@ -37,10 +37,10 @@ const deconnexion = ()=>{
         </div>
     <Menu className="menu">
     <h4 style={{display:"flex",alignItems:"center",justifyContent:"center", fontWeight:"bold"}}>Admine Page</h4>
-    <SubMenu label="Dashboard" >
+    {/* <SubMenu label="Dashboard" >
       <MenuItem  onClick={()=>history.push("/linechart")}>Line Chart</MenuItem>
       <MenuItem onClick={()=>history.push("/barechart")}>Bar Chart</MenuItem>
-    </SubMenu>
+    </SubMenu> */}
     <SubMenu label="Offre " >
       <MenuItem  onClick={()=>history.push("/list")}>  Listes des offres</MenuItem>
       <MenuItem onClick={()=>history.push("/ajouter")}> Ajouter Offre</MenuItem>

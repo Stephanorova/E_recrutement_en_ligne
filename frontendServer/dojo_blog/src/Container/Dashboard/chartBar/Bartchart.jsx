@@ -1,8 +1,11 @@
 import'./index.css'
 
+
 const Bartchart = () => {
   return (
-    <div className='barchart'>Bartchart</div>
+    <div className='barchart'>
+      Bartchart
+    </div>
   )
 }
 
